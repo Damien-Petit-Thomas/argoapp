@@ -1,0 +1,22 @@
+replicaCount: 1
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "latest"
+service:
+  type: LoadBalancer
+  port: 80
+pvc:
+  accessModes: 
+    - ReadWriteOnce
+  storageClassName: gp2
+  resources:
+    requests:
+      storage: 1Gi
+cronjob:
+  schedule: "0 * * * *"
+  jobImage:
+    repository: "busybox"
+    tag: "1.28"
+    pullPolicy: IfNotPresent
+  command: ['date']
