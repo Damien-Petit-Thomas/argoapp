@@ -1,0 +1,4 @@
+apiVersion: v2
+name: my-api
+description: Une application Kubernetes simple
+version: 0.1.0

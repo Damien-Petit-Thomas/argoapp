@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  index.html: |
+    <html>
+    <head>
+    <style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    }
+    .centered {
+    text-align: center;
+    }
+    h1 {
+    color: #333;
+    }
+    </style>
+    </head>
+    <body>
+    <div class="centered">
+    <h1>Helloo les DevOps, Challenge OK!!</h1>
+    </div>
+    </body>
+    </html>
